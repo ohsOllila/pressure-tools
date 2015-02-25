@@ -1,7 +1,10 @@
 
 Here are some tools to analyse a 3D pressure field calculated using a 
-customised version of Gromacs available from here:
-  http://www.cgmartini.nl/index.php/downloads/tools/
+customised versions of Gromacs available from:
+ftp://ftp.gromacs.org/pub/tmp/gromacs-4.0.2_localpressure.tar.gz 
+http://repo.or.cz/w/gromacs.git/shortlog/refs/heads/release-4-5-localpressure
+http://www.lacan.upc.edu/LocalStressFromMD
+
 
 If you use the code, please cite:
 
