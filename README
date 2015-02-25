@@ -1,0 +1,63 @@
+
+Here are some tools to analyse a 3D pressure field calculated using a 
+customised version of Gromacs available from here:
+  http://www.cgmartini.nl/index.php/downloads/tools/
+
+If you use the code, please cite:
+
+Ollila et al. (2009) 
+  3D Pressure Field in Lipid Membranes and Membrane-Protein Complexes. 
+  Phys. Rev. Lett. 102: 078101 [DOI: 10.1103/PhysRevLett.102.078101]
+
+
+SPHERICAL SYSTEM
+---
+
+compile:
+  gcc -lm spherical_av.c -o spherical_av
+use: 
+  ./spherical_av local_pressure.dat
+
+The code assumes that the center of your vesicle (origin of the spherical 
+coordinate system) is in the center of the simulation box. So before 
+running the pressure calculation you have to center it. If you have it not 
+in the center but still not moving you can change the lines 149-151 in the 
+code to redefine the COM.
+
+Output in rad_pres.xvg is:
+  distance from center (in voxel units)   P_theta   P_phi   P_r
+
+
+PLANAR SYSTEM
+---
+
+compile:
+  gcc -lm planar_av.c -o planar_av
+use:
+  ./planar_av local_pressure.dat
+
+output:
+
+  2Dlpp.dat
+    Pressure tensor averaged over xy plane 
+	(Pxx Pxy Pxz Pyx Pyy Pyz Pzx Pzy Pzz)
+
+  3Dpp.dat
+    Pressure tensor in 3D
+
+  3Dppras.mol
+    You can visualize 3D pressure opening this with rasmol and setting: 
+	color->temperature and then use slab mode
+
+  tension_radius.xvg
+    Tension as a function from center of the system, averaged over angle in 
+	cylindrical coordinates. Look Fig.3 in PRL paper.
+
+  kappac0_radius.xvg
+    Product of bending modulus and spontaneous curvature, averaged over 
+	angle in cylindrical coordinates. Look Fig.3 in PRL paper.
+
+  pres_prof_cil.xvg
+    Using this with gnuscript you can plot similar figure than the Fig.3 a) 
+	in the PRL paper.
+

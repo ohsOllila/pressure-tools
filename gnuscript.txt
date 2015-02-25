@@ -1,0 +1,16 @@
+set nokey
+set term postscript eps enhanced color
+set output "color_pres.eps"
+set pm3d at b
+set ticslevel 0.8
+set isosample 40,40
+unset surface
+set view 180,180
+set colorbox user origin 0.85,0.3
+#set xrange [50.0:-50.0]
+#set yrange [0:50]
+set zrange [-700:300]
+set size 1,1
+splot "pres_prof_cil.xvg" w l
+set out
+
