@@ -1,5 +1,5 @@
-<a href="http://dx.doi.org/10.5281/zenodo.15666"><img src="https://zenodo.org/badge/6608/ohsOllila/pressure-tools.svg"><a>
 
+[![DOI](https://zenodo.org/badge/6608/ohsOllila/pressure-tools.svg)](http://dx.doi.org/10.5281/zenodo.15666)
 
 Here are some tools to analyse a 3D pressure field calculated using a 
 customised versions of Gromacs available from:
