@@ -1,5 +1,3 @@
-https://zenodo.org/badge/6608/ohsOllila/pressure-tools.svg
-
 Here are some tools to analyse a 3D pressure field calculated using a 
 customised versions of Gromacs available from:
 ftp://ftp.gromacs.org/pub/tmp/gromacs-4.0.2_localpressure.tar.gz 
@@ -13,6 +11,9 @@ Ollila et al. (2009)
   3D Pressure Field in Lipid Membranes and Membrane-Protein Complexes. 
   Phys. Rev. Lett. 102: 078101 [DOI: 10.1103/PhysRevLett.102.078101]
 
+and
+
+http://dx.doi.org/10.5281/zenodo.15666
 
 SPHERICAL SYSTEM
 ---
