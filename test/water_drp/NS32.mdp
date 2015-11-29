@@ -1,0 +1,68 @@
+; This is where you chose dynamics e.g. md-vv, bd, cg
+integrator               = md-vv
+;
+;Annealing no, single 
+annealing                  = no              
+;
+; starting time for the run
+tinit                    = 0
+; time step, number of steps
+dt                       = 0.001
+nsteps                   = 5000000
+; remove center of mass rotation and translation
+; comm-mode                = Angular
+;
+; output x, v to coordinate file
+nstxout                  = 10000
+nstvout                  = 10000
+; output log - energy
+nstlog                   = 10000
+nstenergy                = 10000
+nstcalcenergy            = 10000 
+; Write more info - compressed
+compressed-x-grps        = SOL
+nstxout-compressed       = 0
+;
+; Periodic Boundary Conditions xyz, no, xy
+cutoff-scheme            = Verlet
+ns-type                  = grid
+pbc                      = xyz
+;
+; Electrostatics
+coulombtype              = PME           ; Treatment of long range electrostatic interactions
+; epsilon-rf=0             = 0
+coulomb-modifier         = Potential-shift-Verlet
+rcoulomb                 = 2.0
+; rlist                    = 1.1
+ewald-rtol               = 1e-5
+;
+; VdW
+vdwtype                  = Cut-off       ; potential cut-off
+vdw-modifier             = Potential-shift-Verlet
+rvdw                     = 2.0
+ewald-rtol-lj            = 1e-3
+DispCorr                 = Ener          ; apply long range dispersion corrections for energy 
+;
+; T coupling berendsen, nose-hoover, v-rescale
+tcoupl                   = nose-hoover 
+tau-t                    = 0.2
+ref-t                    = 278
+; P coupling no, berendsen, Parrinello-Rahman, MTTK
+tc-grps                  = system
+Pcoupl                   = no
+pcoupltype               = isotropic ; isotropic (xyz) or semiisotropic (xy z) if you add 2 values for tau-p and compress
+tau-p                    = 2.0
+ref-p                    = 1.0
+compressibility          = 4.5e-5
+;
+; Generate Velocities
+gen-vel                  = no
+gen-temp                 = 278
+gen-seed                 = 173729
+;
+; Constraints none (explicitly in top), h-bonds, all-bonds
+; Algorithms LINS, SHAKE
+constraint-algorithm     = LINCS
+constraints              = h-bonds
+continuation             = no
+morse                    = no

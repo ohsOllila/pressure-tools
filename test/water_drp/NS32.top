@@ -1,0 +1,19 @@
+; water droplet
+; Include water topology
+#include "oplsaa.ff/forcefield.itp"
+#include "oplsaa.ff/tip4p.itp"
+
+#ifdef POSRES_WATER
+; Position restraint for each water oxygen
+[ position_restraints ]
+;  i funct       fcx        fcy        fcz
+   1    1       1000       1000       1000
+#endif
+
+[ system ]
+; Name
+water droplet
+
+[ molecules ]
+; Compound        #mols
+SOL              6907
